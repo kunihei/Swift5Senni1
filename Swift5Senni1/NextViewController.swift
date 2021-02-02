@@ -9,9 +9,15 @@ import UIKit
 
 class NextViewController: UIViewController {
 
+    @IBOutlet weak var countLabel: UILabel!
+    
+    var count2 = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        countLabel.text = String(count2)
+        
         // Do any additional setup after loading the view.
     }
     

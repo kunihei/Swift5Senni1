@@ -19,15 +19,26 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cT-2D-dhs">
                                 <rect key="frame" x="118" y="366" width="139" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次へ"/>
+                                <state key="normal" title="プラスボタン"/>
                                 <connections>
-                                    <segue destination="Fz0-ck-Ld4" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="I4Q-RD-F1d"/>
+                                    <action selector="plus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nAF-9c-zUT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLe-3o-SQh">
+                                <rect key="frame" x="80" y="147" width="214" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="JLe-3o-SQh" id="SkA-Kc-7th"/>
+                        <segue destination="Fz0-ck-Ld4" kind="presentation" identifier="next" modalPresentationStyle="fullScreen" id="htP-pH-eu2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,7 +47,7 @@
         <!--Next View Controller-->
         <scene sceneID="Vzc-GD-bP4">
             <objects>
-                <viewController id="Fz0-ck-Ld4" customClass="NextViewController" customModule="Swift5Senni1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nextVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fz0-ck-Ld4" customClass="NextViewController" customModule="Swift5Senni1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vSl-qB-aNP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +63,20 @@
                                     <action selector="back:" destination="Fz0-ck-Ld4" eventType="touchUpInside" id="zdn-7G-74b"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-wv-gwA">
+                                <rect key="frame" x="61" y="168" width="253" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ibh-Sa-lTA"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="vO8-wv-gwA" id="JIa-mH-uEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHP-iE-Vik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
